@@ -83,11 +83,13 @@
             if (this.textContent == 'Включить') {
                 this.classList.add("active");
                 document.getElementById('obj_id1').classList.add("active_bg");
-                request.open('GET', '/vkl', false);
+                request.open('GET', '/off', false);
                 request.send();
             } else if (this.textContent == 'Выключить') {
                 this.classList.remove("active");
                 document.getElementById('obj_id1').classList.remove("active_bg");
+                request.open('GET', '/on', false);
+                request.send();
             }
         });
 
