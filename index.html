@@ -78,10 +78,13 @@
     </main>
     <script>
         document.getElementById('btn_one').addEventListener('click', function () {
+            let request = new XMLHttpRequest();
             this.textContent = this.textContent === 'Выключить' ? 'Включить' : 'Выключить';
             if (this.textContent == 'Включить') {
                 this.classList.add("active");
                 document.getElementById('obj_id1').classList.add("active_bg");
+                request.open('GET', '/vkl', false);
+                request.send();
             } else if (this.textContent == 'Выключить') {
                 this.classList.remove("active");
                 document.getElementById('obj_id1').classList.remove("active_bg");
